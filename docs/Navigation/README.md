@@ -27,5 +27,5 @@ ___
 
 ___
 
-Pink arrow - navigation as in google map
-Blue arrow - navigation with using additional panel
+1. Pink arrow - navigation as in google map
+2. Blue arrow - navigation with using additional panel
