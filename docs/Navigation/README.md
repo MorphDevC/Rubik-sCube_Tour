@@ -9,6 +9,7 @@ In basic markup there is every square-panel has:
 2. Target number of panel.
 3. Next navigation after selecting target plane.
 
+___
 
 ![image](https://user-images.githubusercontent.com/62260078/185654730-2e08b58b-a133-4cd4-8303-cdd333089a7b.png)
 
@@ -20,7 +21,11 @@ There is 2 type of movement:
 1. Using built-in navigation as in google maps when on pressing button you fo farward
 2. Using an additional panel which contains other areas, but with the ability to use built-in navigation as in google map
 
+___
+
 ![image](https://user-images.githubusercontent.com/62260078/185661753-4e2a4df0-d766-496e-b493-2c15eda55aa6.png)
+
+___
 
 Pink arrow - navigation as in google map
 Blue arrow - navigation with using additional panel
