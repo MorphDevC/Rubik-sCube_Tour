@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3867927964
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 86de0189e0080d21ff92712a212eabb5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/refectorymiddle_1.jpg
+Dependencies: []

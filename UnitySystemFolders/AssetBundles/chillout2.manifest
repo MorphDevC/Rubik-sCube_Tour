@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 116877465
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 723e78f4f8bae7e725fea2d92bbb7707
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/chillout2.jpg
+Dependencies: []

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 4218426698
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f73a18ce9f2d1bd45a7bae603675cce6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/societycounselroom1.jpg
+Dependencies: []

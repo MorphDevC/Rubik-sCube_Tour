@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3826102497
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4eb05601fd32f636f7d6c53073ac6128
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/loungestairs1.jpg
+Dependencies: []

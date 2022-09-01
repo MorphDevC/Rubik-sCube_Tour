@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 499625790
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 776685ee54dd83421f0642fe43e8c835
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/hall3_1.jpg
+Dependencies: []

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3349566908
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 17e79eb7aadb521ac3ead126e170c953
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/refectoryright_3.jpg
+Dependencies: []

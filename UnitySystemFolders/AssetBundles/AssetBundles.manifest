@@ -1,0 +1,139 @@
+ManifestFileVersion: 0
+CRC: 1616233849
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: loungestairs0
+      Dependencies: {}
+    Info_1:
+      Name: 310
+      Dependencies: {}
+    Info_2:
+      Name: swpool
+      Dependencies: {}
+    Info_3:
+      Name: 127
+      Dependencies: {}
+    Info_4:
+      Name: loungestairs2
+      Dependencies: {}
+    Info_5:
+      Name: chillout3
+      Dependencies: {}
+    Info_6:
+      Name: 281
+      Dependencies: {}
+    Info_7:
+      Name: sp1
+      Dependencies: {}
+    Info_8:
+      Name: 111
+      Dependencies: {}
+    Info_9:
+      Name: loungestairs1
+      Dependencies: {}
+    Info_10:
+      Name: chillout2
+      Dependencies: {}
+    Info_11:
+      Name: 256
+      Dependencies: {}
+    Info_12:
+      Name: societycounselroom2
+      Dependencies: {}
+    Info_13:
+      Name: chillout1
+      Dependencies: {}
+    Info_14:
+      Name: 254b
+      Dependencies: {}
+    Info_15:
+      Name: societycounselroom1
+      Dependencies: {}
+    Info_16:
+      Name: judo
+      Dependencies: {}
+    Info_17:
+      Name: 8
+      Dependencies: {}
+    Info_18:
+      Name: 251a
+      Dependencies: {}
+    Info_19:
+      Name: refectoryright_3
+      Dependencies: {}
+    Info_20:
+      Name: hall3_3
+      Dependencies: {}
+    Info_21:
+      Name: 439
+      Dependencies: {}
+    Info_22:
+      Name: refectorymiddle_1
+      Dependencies: {}
+    Info_23:
+      Name: 239
+      Dependencies: {}
+    Info_24:
+      Name: hall3_2
+      Dependencies: {}
+    Info_25:
+      Name: 333
+      Dependencies: {}
+    Info_26:
+      Name: 2
+      Dependencies: {}
+    Info_27:
+      Name: refectoryleft_2
+      Dependencies: {}
+    Info_28:
+      Name: hall3_1
+      Dependencies: {}
+    Info_29:
+      Name: 331_2
+      Dependencies: {}
+    Info_30:
+      Name: 190
+      Dependencies: {}
+    Info_31:
+      Name: ping2
+      Dependencies: {}
+    Info_32:
+      Name: hall
+      Dependencies: {}
+    Info_33:
+      Name: 331_1
+      Dependencies: {}
+    Info_34:
+      Name: 186
+      Dependencies: {}
+    Info_35:
+      Name: ping1
+      Dependencies: {}
+    Info_36:
+      Name: gymnast
+      Dependencies: {}
+    Info_37:
+      Name: 329
+      Dependencies: {}
+    Info_38:
+      Name: 183
+      Dependencies: {}
+    Info_39:
+      Name: loungestairs4
+      Dependencies: {}
+    Info_40:
+      Name: gym
+      Dependencies: {}
+    Info_41:
+      Name: 320
+      Dependencies: {}
+    Info_42:
+      Name: 13
+      Dependencies: {}
+    Info_43:
+      Name: loungestairs3
+      Dependencies: {}
+    Info_44:
+      Name: chillout4
+      Dependencies: {}

@@ -2,12 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Rubik'sCube/[Ll]ibrary/
-/Rubik'sCube/[Tt]emp/
-/Rubik'sCube/[Oo]bj/
-/Rubik'sCube/[Bb]uild/
-/Rubik'sCube/[Bb]uilds/
-/Rubik'sCube/[Ll]ogs/
+/RubiksCube/[Ll]ibrary/
+/RubiksCube/[Tt]emp/
+/RubiksCube/[Oo]bj/
+/RubiksCube/[Bb]uild/
+/RubiksCube/[Bb]uilds/
+/RubiksCube/[Ll]ogs/
+/[Bb]uilds/
 #/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.

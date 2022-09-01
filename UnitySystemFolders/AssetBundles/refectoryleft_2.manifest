@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1876092483
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2f2c6777fcaf957bd83dbcf1c4e0bbcf
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/refectoryleft_2.jpg
+Dependencies: []

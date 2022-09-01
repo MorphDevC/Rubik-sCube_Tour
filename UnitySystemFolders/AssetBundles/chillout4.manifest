@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3263436148
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9b85b812e51a1004422490ccae522f19
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/chillOut4.jpg
+Dependencies: []
