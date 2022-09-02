@@ -5,17 +5,18 @@ using UnityEngine;
 public class OptionsInfo:MonoBehaviour
 {
     private List<ISliderInfo> _options;
-    private void Start()
+    private void Awake()
     {
         _options = GetComponentsInChildren<ISliderInfo>().ToList();
     }
 
-    public void RegisterOptionalValue(PropertyTag targetTag, IOptionableValue referenceValue)
+    public float GetDefaultValue(PropertyTag targetTag)
     {
-        foreach (var option in _options)
-        {
-            //if(option.GetTargetTag.Equals(targetTag))
-                //option.OnOptionValueChange+=referenceValue.Value
-        }
+        return _options.First(option => option.GetTargetTag.Equals(targetTag)).GetCurrentValue;
+    }
+
+    public void RegisterFloatOptionalValue(PropertyTag targetTag, IOptionableValue<float> referenceValue)
+    {
+        _options.First(option => option.GetTargetTag.Equals(targetTag)).OnOptionValueChange += referenceValue.SetValue;
     }
 }

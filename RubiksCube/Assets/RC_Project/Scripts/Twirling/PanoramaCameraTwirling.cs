@@ -1,26 +1,25 @@
 ﻿using UnityEngine;
 
-public class CameraMouseAction : MonoBehaviour
+public class PanoramaCameraTwirling : ObjectTwirlingFloat
 {
     public CubeChangingSkyBox CubeChangingSkyBoxRef;
     
-   
-    private float sensitivity = 2.0f;
+    // [SerializeField] private OptionsInfo OptionsInfoReference;
+    // [SerializeField] private PropertyTag _propertyTag;
+    //
+    // private IOptionableValue<float> _sensitivity;
     private Vector2 rotXY;
     private Quaternion originalRot;
 
-    void Start()
+    public override void Start()
     {
         CubeChangingSkyBoxRef.OnPanoramaSet += SetCameraDefaultRotation;
         CubeChangingSkyBoxRef.OnPanoramaSet += SetCameraRotationOnPanoramaSet;
         CubeChangingSkyBoxRef.OnPanoramaUnSet += SetCameraRotationOnPanoramaUnSet;
         
+        base.Start();
+        
         this.enabled = false;
-    }
-
-    public void SetNewSensivity(string sens)
-    {
-        sensitivity = float.Parse(sens, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
     }
 
     private void SetCameraDefaultRotation()
@@ -41,12 +40,12 @@ public class CameraMouseAction : MonoBehaviour
         this.enabled = false;
     }
     
-    // Update is called once per frame
     void Update()
     {
+        Debug.Log(GetTwirlingValue);
         if(Input.GetAxis("Fire1")>0)
         {
-            rotXY += new Vector2((Input.GetAxis("Mouse X") * sensitivity)%360, (Input.GetAxis("Mouse Y") * sensitivity)%360);
+            rotXY += new Vector2((Input.GetAxis("Mouse X") * GetTwirlingValue)%360, (Input.GetAxis("Mouse Y") * GetTwirlingValue)%360);
 
             transform.localRotation = originalRot * Quaternion.AngleAxis(rotXY.x, Vector3.up) * Quaternion.AngleAxis(rotXY.y, Vector3.left);
         }

@@ -8,14 +8,22 @@ public class RotateCube : MonoBehaviour
     public int speed = 3;
     public Quaternion yrot;
 
+    // private OptionalValueFloat _speed;
+    // [SerializeField] private OptionsInfo OptionsInfoReference;
+    // [SerializeField] private PropertyTag _propertyTag;
+
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(gameObject.name);
         player = (GameObject)this.gameObject;
-        
+        // if (OptionsInfoReference != null)
+        //     _speed = new OptionalValueFloat(OptionsInfoReference.GetDefaultValue(_propertyTag));
+        // else
+        //     _speed = new OptionalValueFloat(3f);
     }
 
     // Update is called once per frame
@@ -45,45 +53,5 @@ public class RotateCube : MonoBehaviour
     {
         player.transform.eulerAngles = new Vector3(0,315,0);
     }
-
     
-
-    //Vector2 mouseLook;
-    //Vector2 smoothV;
-    //public float sensitivity = 5.0f;
-    //public float smoothing = 2.0f;
-
-    //GameObject charetcter;
-
-    //private bool checking = false;
-
-    //void Start()
-    //{
-
-    //    charetcter = this.transform.parent.gameObject;
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //    var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")); // Take 2 axes
-
-    //    md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
-    //    // Multiply Axis X * Sens(5)*Smoothing(2)
-    //    // The same with Axes Y
-    //    // X & Y axes =[-1;1]
-
-    //    smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
-    //    smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
-    //    mouseLook += smoothV;
-
-
-    //        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-    //        charetcter.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, charetcter.transform.up);
-
-
-
-    //}
 }
