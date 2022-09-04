@@ -13,28 +13,28 @@ public class PanoramaCameraTwirling : ObjectTwirlingFloat
 
     public override void Start()
     {
-        CubeChangingSkyBoxRef.OnPanoramaSet += SetCameraDefaultRotation;
-        CubeChangingSkyBoxRef.OnPanoramaSet += SetCameraRotationOnPanoramaSet;
-        CubeChangingSkyBoxRef.OnPanoramaUnSet += SetCameraRotationOnPanoramaUnSet;
+        CubeChangingSkyBoxRef.OnPanoramaSetCamera += SetCameraCameraDefaultRotation;
+        CubeChangingSkyBoxRef.OnPanoramaSetCamera += SetCameraCameraRotationOnPanoramaSetCamera;
+        CubeChangingSkyBoxRef.OnPanoramaUnSetCamera += SetCameraCameraRotationOnPanoramaUnSetCamera;
         
         base.Start();
         
         this.enabled = false;
     }
 
-    private void SetCameraDefaultRotation()
+    private void SetCameraCameraDefaultRotation()
     {
         rotXY = new Vector2(0, 0);
     }
 
-    private void SetCameraRotationOnPanoramaSet()
+    private void SetCameraCameraRotationOnPanoramaSetCamera()
     {
         this.enabled = true;
         transform.localEulerAngles = new Vector3(0, 0, 0);
         originalRot = transform.localRotation;
     }
 
-    private void SetCameraRotationOnPanoramaUnSet()
+    private void SetCameraCameraRotationOnPanoramaUnSetCamera()
     {
         transform.localEulerAngles = new Vector3(35, 0, 0);
         this.enabled = false;
@@ -42,7 +42,6 @@ public class PanoramaCameraTwirling : ObjectTwirlingFloat
     
     void Update()
     {
-        Debug.Log(GetTwirlingValue);
         if(Input.GetAxis("Fire1")>0)
         {
             rotXY += new Vector2((Input.GetAxis("Mouse X") * GetTwirlingValue)%360, (Input.GetAxis("Mouse Y") * GetTwirlingValue)%360);

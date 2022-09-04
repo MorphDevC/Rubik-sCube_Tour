@@ -14,8 +14,8 @@ using UnityEngine.SceneManagement;
 
 public class CubeChangingSkyBox : MonoBehaviour
 {
-    public event Action OnPanoramaSet;
-    public event Action OnPanoramaUnSet;
+    public event Action OnPanoramaSetCamera;
+    public event Action OnPanoramaUnSetCamera;
     
     public event Action<BelongableTag,bool> OnPanoramaSetUI;
     public event Action<BelongableTag,bool> OnPanoramaUnSetUI;
@@ -57,6 +57,8 @@ public class CubeChangingSkyBox : MonoBehaviour
     private static Vector3 VectorCameraAngles { get => _vectorCameraAngles; set => _vectorCameraAngles = value; }
     public static bool InChiillPannel { get => _inChiillPannel; set => _inChiillPannel = value; } //for using 1 pannel for Classrooms and ChillOuts
 
+    private NumberPanelPanorama _targetPanoramaName = new NumberPanelPanorama();
+
 
 
     private void Start()
@@ -76,11 +78,6 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
         
         if (!PlanesActions.DoNotUseSomeStringsInCubeChangeSky)
         {
-            // MainSceneObjects.SetActive(false);
-            // UI_MainCubeCanvas.SetActive(false);
-            //
-            // UI_BackToCube_Panoram.SetActive(true);
-            
             OnPanoramaSetUI?.Invoke(BelongableTag.Panorama,true);
 
             PlanesActions.DoNotUseSomeStringsInCubeChangeSky = true;
@@ -123,7 +120,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
             case 15:
                 StartCoroutine(DownloadCacheView("loungestairs0"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
                 break;
             case 7:
                 StartCoroutine(DownloadCacheView("loungestairs1"));
@@ -191,7 +188,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
                 StartCoroutine(DownloadCacheView("251a"));
                 break;
             case 39:
-                //NavigationPannel.SetNavPannel(PannelNavigation, new Vector3(-33,22,-22), new Vector3(-90, 0, -70), false);
+                NavigationPannel.SetNavPannel(PannelNavigation, new Vector3(-33,22,-22), new Vector3(-90, 0, -70), false);
 
                 StartCoroutine(DownloadCacheView("310"));
                 break;
@@ -316,46 +313,47 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
             #endregion
 
-            #region SC
-            case 6:
-                StartCoroutine(DownloadCacheView("swpool"));
-
-                break;
-            case 10:
-                StartCoroutine(DownloadCacheView("sp1"));
-
-                break;
-            case 11:
-                StartCoroutine(DownloadCacheView("gym"));
-
-                break;
-            case 18:
-                StartCoroutine(DownloadCacheView("ping2"));
-
-                break;
-            case 24:
-                StartCoroutine(DownloadCacheView("hall"));
-
-                break;
-            case 28:
-                StartCoroutine(DownloadCacheView("gymnast"));
-
-                break;
-            case 45:
-                StartCoroutine(DownloadCacheView("ping1"));
-
-                break;
-            case 48:
-                StartCoroutine(DownloadCacheView("judo"));
-
-                break;
-            #endregion
+            // #region SC
+            // case 6:
+            //     StartCoroutine(DownloadCacheView("swpool"));
+            //
+            //     break;
+            // case 10:
+            //     StartCoroutine(DownloadCacheView("sp1"));
+            //
+            //     break;
+            // case 11:
+            //     StartCoroutine(DownloadCacheView("gym"));
+            //
+            //     break;
+            // case 18:
+            //     StartCoroutine(DownloadCacheView("ping2"));
+            //
+            //     break;
+            // case 24:
+            //     StartCoroutine(DownloadCacheView("hall"));
+            //
+            //     break;
+            // case 28:
+            //     StartCoroutine(DownloadCacheView("gymnast"));
+            //
+            //     break;
+            // case 45:
+            //     StartCoroutine(DownloadCacheView("ping1"));
+            //
+            //     break;
+            // case 48:
+            //     StartCoroutine(DownloadCacheView("judo"));
+            //
+            //     break;
+            // #endregion
             
             case 20:
                 //RenderSettings.skybox = Default;
                 break;
             
         }
+        StartCoroutine(DownloadCacheView(_targetPanoramaName.TargetPanoramaToLoad[Convert.ToInt32(WhichPlane)]));
     }
 
     private IEnumerator DownloadCacheView(string name)
@@ -391,7 +389,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
             m_Renderer.material = UniversalMat;
             assetBundle.Unload(false);
-            OnPanoramaSet?.Invoke();
+            OnPanoramaSetCamera?.Invoke();
 //#endif 
         
 // #if !UNITY_EDITOR
@@ -422,22 +420,23 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
     public void BackToCube()
     {
-        MainSceneObjects.SetActive(true);
-        UI_MainCubeCanvas.SetActive(true);
-
-
-
-        UI_BackToCube_Panoram.SetActive(false);
-        UI_ImageBackground.SetActive(false);
-        NavDown.SetActive(false);
-        NavUp.SetActive(false);
-        PannelNavigation.SetActive(false);
-        teleportRefectory[0].SetActive(false);
-        teleportRefectory[1].SetActive(false);
+        // MainSceneObjects.SetActive(true);
+        // UI_MainCubeCanvas.SetActive(true);
+        //
+        //
+        //
+        // UI_BackToCube_Panoram.SetActive(false);
+        // UI_ImageBackground.SetActive(false);
+        // NavDown.SetActive(false);
+        // NavUp.SetActive(false);
+        // PannelNavigation.SetActive(false);
+        // teleportRefectory[0].SetActive(false);
+        // teleportRefectory[1].SetActive(false);
 
         PlanesActions.DoNotUseSomeStringsInCubeChangeSky = false;
         
-        OnPanoramaUnSet?.Invoke();
+        OnPanoramaUnSetCamera?.Invoke();
+        OnPanoramaSetUI?.Invoke(BelongableTag.Cube,true);
         UniversalMat.shader = DefaultShader;
     }
 

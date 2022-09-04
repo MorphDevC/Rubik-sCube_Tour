@@ -1,4 +1,4 @@
-﻿public interface IUIBelongableObject
+﻿public interface IBelongableObject
 {
     BelongableTag _currentTag { get; }
     void SetActiveBelongableObject(BelongableTag targetTag,bool isActive);
