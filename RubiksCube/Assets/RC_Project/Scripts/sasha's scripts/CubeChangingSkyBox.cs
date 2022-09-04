@@ -17,6 +17,9 @@ public class CubeChangingSkyBox : MonoBehaviour
     public event Action OnPanoramaSet;
     public event Action OnPanoramaUnSet;
     
+    public event Action<BelongableTag,bool> OnPanoramaSetUI;
+    public event Action<BelongableTag,bool> OnPanoramaUnSetUI;
+    
     private string bundleURL;
     public Texture2D for_loading;
     private int version = 0;
@@ -73,10 +76,12 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
         
         if (!PlanesActions.DoNotUseSomeStringsInCubeChangeSky)
         {
-            MainSceneObjects.SetActive(false);
-            UI_MainCubeCanvas.SetActive(false);
-
-            UI_BackToCube_Panoram.SetActive(true);
+            // MainSceneObjects.SetActive(false);
+            // UI_MainCubeCanvas.SetActive(false);
+            //
+            // UI_BackToCube_Panoram.SetActive(true);
+            
+            OnPanoramaSetUI?.Invoke(BelongableTag.Panorama,true);
 
             PlanesActions.DoNotUseSomeStringsInCubeChangeSky = true;
 
@@ -221,7 +226,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
             case 43:
                 teleportRefectory[0].SetActive(true);
                 teleportRefectory[0].transform.localPosition = new Vector3(110, 0, -84);
-                TeleportAction.RefPos = 4; // 1 - left or right doesntmatter
+                TeleportAction.RefPos = 4; // 1 - left or right doe sntmatter
 
                 StartCoroutine(DownloadCacheView("societycounselroom2"));
                 // write a method
