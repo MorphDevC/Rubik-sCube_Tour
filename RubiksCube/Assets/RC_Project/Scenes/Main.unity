@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 378269656}
   - component: {fileID: 378269655}
   - component: {fileID: 378269654}
+  - component: {fileID: 378269657}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -628,6 +629,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &378269657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378269652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8b66e73e494ec48af487bd1eaf6bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubeChangingSkyBoxReference: {fileID: 513846477}
 --- !u!1 &418052288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,9 +2192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45fbbb49030ae7409360a208ca0f2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CubeChangingSkyBoxRef: {fileID: 513846477}
   OptionsInfoReference: {fileID: 1109002292}
   _propertyTag: 0
+  CubeChangingSkyBoxRef: {fileID: 513846477}
 --- !u!1 &979389712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2756,7 @@ GameObject:
   - component: {fileID: 1172440028}
   - component: {fileID: 1172440027}
   - component: {fileID: 1172440026}
+  - component: {fileID: 1172440029}
   m_Layer: 5
   m_Name: BackToCubeButton
   m_TagString: Untagged
@@ -2859,6 +2874,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172440024}
   m_CullTransparentMesh: 0
+--- !u!114 &1172440029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172440024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a41b7cbca52472481d7b5d2574f31fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityTag: 1
 --- !u!1 &1188344850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3174,7 @@ GameObject:
   - component: {fileID: 1244224260}
   - component: {fileID: 1244224262}
   - component: {fileID: 1244224261}
+  - component: {fileID: 1244224263}
   m_Layer: 5
   m_Name: ExplainingPaints
   m_TagString: Untagged
@@ -3206,6 +3235,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244224259}
   m_CullTransparentMesh: 0
+--- !u!114 &1244224263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244224259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a41b7cbca52472481d7b5d2574f31fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityTag: 0
 --- !u!1 &1330333119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,6 +4152,7 @@ GameObject:
   - component: {fileID: 1848038790}
   - component: {fileID: 1848038789}
   - component: {fileID: 1848038788}
+  - component: {fileID: 1848038787}
   m_Layer: 5
   m_Name: RefreshButton
   m_TagString: Untagged
@@ -4136,6 +4179,19 @@ RectTransform:
   m_AnchoredPosition: {x: 121.98299, y: 107.98468}
   m_SizeDelta: {x: 170.0703, y: 170.0703}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1848038787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848038785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a41b7cbca52472481d7b5d2574f31fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityTag: 0
 --- !u!114 &1848038788
 MonoBehaviour:
   m_ObjectHideFlags: 0
