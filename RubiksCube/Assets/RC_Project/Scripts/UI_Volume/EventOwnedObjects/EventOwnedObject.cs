@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class BelongableObject : MonoBehaviour, IBelongableObject
+public class EventOwnedObject : MonoBehaviour, IEventOwnedObject
 {
     [SerializeField]private BelongableTag _unityTag;
     public BelongableTag _currentTag { get; private set; }
@@ -11,7 +11,12 @@ public class BelongableObject : MonoBehaviour, IBelongableObject
         _currentTag = _unityTag;
     }
 
-    public virtual void SetActiveBelongableObject(BelongableTag targetTag,bool isActive)
+    public virtual void SetActiveOnPanoramaSetOwnedObject(BelongableTag targetTag, bool isActive, byte targetPlane)
+    {
+        SetActiveStatusOwnedObject(targetTag, isActive);
+    }
+
+    public virtual void SetActiveStatusOwnedObject(BelongableTag targetTag, bool isActive)
     {
         if(targetTag==_currentTag)
             this.gameObject.SetActive(isActive);

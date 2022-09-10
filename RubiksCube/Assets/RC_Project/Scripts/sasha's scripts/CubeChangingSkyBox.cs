@@ -17,8 +17,8 @@ public class CubeChangingSkyBox : MonoBehaviour
     public event Action OnPanoramaSetCamera;
     public event Action OnPanoramaUnSetCamera;
     
-    public event Action<BelongableTag,bool> OnPanoramaSetUI;
-    public event Action<BelongableTag,bool> OnPanoramaUnSetUI;
+    public event Action<BelongableTag,bool, byte> OnPanoramaSetOwnedObjects;
+    public event Action<BelongableTag,bool> OnPanoramaUnSetOwnedObjects;
     
     private string bundleURL;
     public Texture2D for_loading;
@@ -57,7 +57,7 @@ public class CubeChangingSkyBox : MonoBehaviour
     private static Vector3 VectorCameraAngles { get => _vectorCameraAngles; set => _vectorCameraAngles = value; }
     public static bool InChiillPannel { get => _inChiillPannel; set => _inChiillPannel = value; } //for using 1 pannel for Classrooms and ChillOuts
 
-    private NumberPanelPanorama _targetPanoramaName = new NumberPanelPanorama();
+    private NumberPanelPanorama _panoramaSuppInfo = new NumberPanelPanorama();
 
 
 
@@ -73,18 +73,19 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
 
 
-    public void ChangeSkyBox(byte WhichPlane)
+    public void ChangeSkyBox(byte targetIdPlane)
     {
         
         if (!PlanesActions.DoNotUseSomeStringsInCubeChangeSky)
         {
-            OnPanoramaSetUI?.Invoke(BelongableTag.Panorama,true);
+            //OnPanoramaSetOwnedObjects?.Invoke(BelongableTag.Panorama,true, targetIdPlane);
 
             PlanesActions.DoNotUseSomeStringsInCubeChangeSky = true;
 
         }
         //}
-        switch (WhichPlane)
+        OnPanoramaSetOwnedObjects?.Invoke(BelongableTag.Panorama,true, targetIdPlane);
+        switch (targetIdPlane)
         {
             #region ChilloutsAction
             case 9:
@@ -120,7 +121,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
             case 15:
                 StartCoroutine(DownloadCacheView("loungestairs0"));
 
-                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
+                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
                 break;
             case 7:
                 StartCoroutine(DownloadCacheView("loungestairs1"));
@@ -353,7 +354,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
                 break;
             
         }
-        StartCoroutine(DownloadCacheView(_targetPanoramaName.TargetPanoramaToLoad[Convert.ToInt32(WhichPlane)]));
+        StartCoroutine(DownloadCacheView(_panoramaSuppInfo.TargetPanoramaToLoad[targetIdPlane]));
     }
 
     private IEnumerator DownloadCacheView(string name)
@@ -436,7 +437,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
         PlanesActions.DoNotUseSomeStringsInCubeChangeSky = false;
         
         OnPanoramaUnSetCamera?.Invoke();
-        OnPanoramaSetUI?.Invoke(BelongableTag.Cube,true);
+        OnPanoramaUnSetOwnedObjects?.Invoke(BelongableTag.Cube,true);
         UniversalMat.shader = DefaultShader;
     }
 
