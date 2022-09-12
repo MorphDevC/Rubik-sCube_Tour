@@ -207,9 +207,9 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
                 StartCoroutine(DownloadCacheView("refectoryright_3"));
                 break;
             case 36: 
-                NavigationRefectory.SetNavRefectory(teleportRefectory[0], teleportRefectory[1], new Vector3(355, -13, 20), new Vector3(148, 2, -11), 2);
+                //NavigationRefectory.SetNavRefectory(teleportRefectory[0], teleportRefectory[1], new Vector3(355, -13, 20), new Vector3(148, 2, -11), 2);
                 
-                StartCoroutine(DownloadCacheView("refectorymiddle_1"));
+                //StartCoroutine(DownloadCacheView("refectorymiddle_1"));
                 break;
             #endregion
 

@@ -28,7 +28,7 @@ public class VolumeEventOwnedObject : EventOwnedObject
         {29, new VolumeObjectData (new List<Vector3>(){},new List<Vector3>(){})}, 
         {30, new VolumeObjectData (new List<Vector3>(){new Vector3(-2, 25, 69)},new List<Vector3>(){new Vector3(-90, 85, -90)})}, 
         {34, new VolumeObjectData (new List<Vector3>(){},new List<Vector3>(){})},
-        {36, new VolumeObjectData (new List<Vector3>(){},new List<Vector3>(){})},
+        {36, new VolumeObjectData (new List<Vector3>(){new Vector3(355, -13, 20), new Vector3(148, 2, -11)},new List<Vector3>(){new Vector3(-90,0,0), new Vector3(-90,0,0)})},
         {37, new VolumeObjectData (new List<Vector3>(){new Vector3(102, 20, 53)},new List<Vector3>(){new Vector3(-90, 0, 33)})}, 
         {39, new VolumeObjectData (new List<Vector3>(){},new List<Vector3>(){})},
         {41, new VolumeObjectData (new List<Vector3>(){},new List<Vector3>(){})},
@@ -48,5 +48,14 @@ public class VolumeEventOwnedObject : EventOwnedObject
     public override void SetActiveStatusOwnedObject(BelongableTag targetTag, bool isActive)
     {
         base.SetActiveStatusOwnedObject(targetTag, isActive);
+    }
+    
+    public void SetChildPosition(Transform targetChild, Vector3 position)
+    {
+        targetChild.localPosition = position;
+    }
+    public void SetChildRotation(Transform targetChild, Vector3 rotation)
+    {
+        targetChild.localEulerAngles = rotation;
     }
 }
