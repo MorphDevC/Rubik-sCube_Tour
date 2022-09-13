@@ -83,7 +83,7 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
             PlanesActions.DoNotUseSomeStringsInCubeChangeSky = true;
 
         }
-        //}
+        
         OnPanoramaSetOwnedObjects?.Invoke(BelongableTag.Panorama,true, targetIdPlane);
         switch (targetIdPlane)
         {
@@ -119,55 +119,55 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
             #region LoungeStairsAction
             case 15:
-                StartCoroutine(DownloadCacheView("loungestairs0"));
+                //StartCoroutine(DownloadCacheView("loungestairs0"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-22, 39, -36), 0);
                 break;
             case 7:
-                StartCoroutine(DownloadCacheView("loungestairs1"));
+                //StartCoroutine(DownloadCacheView("loungestairs1"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-14, 43, -88), new Vector3(23, 35, -69), 1);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-14, 43, -88), new Vector3(23, 35, -69), 1);
                 // go to LoungeStairsClass and set LoungeWhichFloor new val cuz in
                 // switch case we watching at which floor but if we go on other floor
                 // from main cube we have to change this var
                 break;
             case 26:
-                StartCoroutine(DownloadCacheView("loungestairs2"));
+                //StartCoroutine(DownloadCacheView("loungestairs2"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-29, 43, -76), new Vector3(-14, 27, -81), 2);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-29, 43, -76), new Vector3(-14, 27, -81), 2);
 
                 break;
             case 34:
-                StartCoroutine(DownloadCacheView("loungestairs3"));
+                //StartCoroutine(DownloadCacheView("loungestairs3"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-27, 44, -59.5f), new Vector3(-7, 29, -41), 3);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(-27, 44, -59.5f), new Vector3(-7, 29, -41), 3);
 
                 break;
             case 41:
-                StartCoroutine(DownloadCacheView("loungestairs4"));
+                //StartCoroutine(DownloadCacheView("loungestairs4"));
                 PannelNavigation.SetActive(false);
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(21, 34, -63), new Vector3(-22, 30, -51.8f), 4);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(21, 34, -63), new Vector3(-22, 30, -51.8f), 4);
 
                 break;
             #endregion
 
             #region Hall3
             case 3:
-                StartCoroutine(DownloadCacheView("hall3_3"));
+                //StartCoroutine(DownloadCacheView("hall3_3"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(22.5f, 36, -37), 7);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(22.5f, 36, -37), 7);
                 //NavStairsSph.HallOrStair = 7; // to see decr look in LoungeStairs.cs
                 break;
             case 13:
-                StartCoroutine(DownloadCacheView("hall3_1"));
+                //StartCoroutine(DownloadCacheView("hall3_1"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(20, 34, -87.5f), 5);
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(20, 34, -87.5f), 5);
                 break;
             case 21:
-                StartCoroutine(DownloadCacheView("hall3_2"));
+                //StartCoroutine(DownloadCacheView("hall3_2"));
 
-                NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(23, 36, -34), new Vector3(-29, 36, -93), 6);                    
+                //NavigationSphere.SetNavUpDownSpheres(NavUp, NavDown, new Vector3(23, 36, -34), new Vector3(-29, 36, -93), 6);                    
                 break;
             #endregion
 
@@ -197,14 +197,14 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
             #region Refectory
             case 5:
-                NavigationRefectory.SetNavRefectory(teleportRefectory[1], teleportRefectory[0], new Vector3(377, 9, -147), 1);//leftView
+                //NavigationRefectory.SetNavRefectory(teleportRefectory[1], teleportRefectory[0], new Vector3(377, 9, -147), 1);//leftView
 
-                StartCoroutine(DownloadCacheView("refectoryleft_2"));
+                //StartCoroutine(DownloadCacheView("refectoryleft_2"));
                 break;
             case 25:
-                NavigationRefectory.SetNavRefectory(teleportRefectory[0], teleportRefectory[1], new Vector3(148, 4, 10), 1);//RightView
+                //NavigationRefectory.SetNavRefectory(teleportRefectory[0], teleportRefectory[1], new Vector3(148, 4, 10), 1);//RightView
 
-                StartCoroutine(DownloadCacheView("refectoryright_3"));
+                //StartCoroutine(DownloadCacheView("refectoryright_3"));
                 break;
             case 36: 
                 //NavigationRefectory.SetNavRefectory(teleportRefectory[0], teleportRefectory[1], new Vector3(355, -13, 20), new Vector3(148, 2, -11), 2);
@@ -215,18 +215,18 @@ bundleURL = "http://morph977.site/RC2/AssetBundles/";
 
             #region SCR_Room
             case 17:
-                teleportRefectory[0].SetActive(true);
-                teleportRefectory[0].transform.localPosition = new Vector3(390, 10, -50);
+                //teleportRefectory[0].SetActive(true);
+                //teleportRefectory[0].transform.localPosition = new Vector3(390, 10, -50);
                 TeleportAction.RefPos = 3; // 1 - left or right doesntmatter
 
-                StartCoroutine(DownloadCacheView("societycounselroom1"));
+                //StartCoroutine(DownloadCacheView("societycounselroom1"));
                 break;
             case 43:
-                teleportRefectory[0].SetActive(true);
-                teleportRefectory[0].transform.localPosition = new Vector3(110, 0, -84);
+                //teleportRefectory[0].SetActive(true);
+                //teleportRefectory[0].transform.localPosition = new Vector3(110, 0, -84);
                 TeleportAction.RefPos = 4; // 1 - left or right doe sntmatter
 
-                StartCoroutine(DownloadCacheView("societycounselroom2"));
+                //StartCoroutine(DownloadCacheView("societycounselroom2"));
                 // write a method
                 break;
             #endregion
