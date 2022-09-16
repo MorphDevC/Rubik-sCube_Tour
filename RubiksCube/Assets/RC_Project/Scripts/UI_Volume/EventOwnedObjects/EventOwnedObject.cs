@@ -11,7 +11,7 @@ public class EventOwnedObject : MonoBehaviour, IEventOwnedObject
         _currentTag = _unityTag;
     }
 
-    public virtual void SetActiveOnPanoramaSetOwnedObject(BelongableTag targetTag, bool isActive, byte targetPlane)
+    public virtual void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
         SetActiveStatusOwnedObject(targetTag, isActive);
     }

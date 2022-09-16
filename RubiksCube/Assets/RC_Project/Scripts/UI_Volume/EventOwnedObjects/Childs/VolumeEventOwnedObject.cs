@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class VolumeEventOwnedObject : EventOwnedObject
 {
-    // public readonly Dictionary<byte, VolumeObjectData> Position = new Dictionary<byte, VolumeObjectData>()
-    // {
-    //     {3, new List<Vector3>(){new Vector3(22.5f, 36, -37)} },
-    //     {4, new List<Vector3>() {new Vector3(127.5f,37,-205)} },
-    //     {5, new List<Vector3>(){new Vector3(377, 9, -147)} },
-    // };
     public readonly Dictionary<byte, VolumeObjectData> Position = new Dictionary<byte, VolumeObjectData>()
     {
         {3, new VolumeObjectData(new List<Vector3>(){new Vector3(137f, 36, -37)}) },
@@ -40,14 +34,25 @@ public class VolumeEventOwnedObject : EventOwnedObject
         base.Awake();
     }
     
-    public override void SetActiveOnPanoramaSetOwnedObject(BelongableTag targetTag, bool isActive, byte targetPlane)
+    public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
-        base.SetActiveOnPanoramaSetOwnedObject(targetTag, isActive, targetPlane);
+        base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
     }
 
     public override void SetActiveStatusOwnedObject(BelongableTag targetTag, bool isActive)
     {
         base.SetActiveStatusOwnedObject(targetTag, isActive);
+    }
+
+    protected virtual void SetChildObjectsInScene(byte targetPlane)
+    {
+        for (int index = 0; index < Position[targetPlane].GetPositions.Count; index++)
+        {
+            GameObject child = transform.GetChild(index).gameObject;
+            child.SetActive(true);
+            SetChildPosition(child.transform, Position[targetPlane].GetPositions[index]);
+            SetChildRotation(child.transform, Position[targetPlane].GetRotations[index]);
+        }
     }
     
     public void SetChildPosition(Transform targetChild, Vector3 position)

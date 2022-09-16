@@ -8,9 +8,8 @@ public class UIEventOwnedObject:EventOwnedObject
     }
     
     
-
-    public override void SetActiveOnPanoramaSetOwnedObject(BelongableTag targetTag, bool isActive, byte targetPlane)
+    public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
-        base.SetActiveOnPanoramaSetOwnedObject(targetTag, isActive, targetPlane);
+        base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
     }
 }

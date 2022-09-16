@@ -21,7 +21,7 @@ public class EventOwnedObjectsManager:MonoBehaviour
 
     private void RegisterObjectsOnPanoramaStatusChange(List<IEventOwnedObject> eventOwnedObjects)
     {
-        eventOwnedObjects.ForEach(obj=>_cubeChangingSkyBoxReference.OnPanoramaSetOwnedObjects+=obj.SetActiveOnPanoramaSetOwnedObject);
+        eventOwnedObjects.ForEach(obj=>_cubeChangingSkyBoxReference.OnPanoramaSetOwnedObjects+=obj.SetActiveOwnedObjectOnPanoramaSet);
         eventOwnedObjects.ForEach(obj=>_cubeChangingSkyBoxReference.OnPanoramaUnSetOwnedObjects+=obj.SetActiveStatusOwnedObject);
     }
     
