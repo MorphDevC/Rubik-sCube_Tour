@@ -38,7 +38,7 @@ public class GetChildsInChillPannels : MonoBehaviour
             _getChillPlane = true;
         }
 
-        if (CubeChangingSkyBox.InChiillPannel)
+        if (PanoramaBehaviour.InChiillPannel)
         {
             _parentChillPlane.transform.GetChild(4).gameObject.SetActive(true);
             _parentChillPlane.transform.GetChild(0).gameObject.transform.localPosition = _localPositionsSmallPlanes[0];

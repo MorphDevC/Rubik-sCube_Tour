@@ -14,7 +14,6 @@ public class RubikTwirling : ObjectTwirlingFloat
     
     private void Update()
     {
-        Debug.Log(GetTwirlingValue);
         if (Input.GetAxis("Fire1") > 0)
         {
             rotateXY -= new Vector2((Input.GetAxis("Mouse X") * GetTwirlingValue) % 360, (Input.GetAxis("Mouse Y") * GetTwirlingValue) % 360);

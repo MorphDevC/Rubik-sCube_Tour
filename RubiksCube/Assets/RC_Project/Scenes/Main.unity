@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8b66e73e494ec48af487bd1eaf6bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeChangingSkyBoxReference: {fileID: 513846477}
+  panoramaBehaviourReference: {fileID: 513846477}
 --- !u!1 &418052288
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,13 +653,15 @@ GameObject:
   - component: {fileID: 418052289}
   - component: {fileID: 418052291}
   - component: {fileID: 418052290}
+  - component: {fileID: 418052293}
+  - component: {fileID: 418052292}
   m_Layer: 5
   m_Name: Destinion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &418052289
 RectTransform:
   m_ObjectHideFlags: 0
@@ -717,6 +719,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418052288}
   m_CullTransparentMesh: 0
+--- !u!114 &418052292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418052288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b99d1aa02274990a1c723ab1b563e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &418052293
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418052288}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &429976304
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 510178229}
+  - component: {fileID: 510178230}
   m_Layer: 0
   m_Name: '[INTERFACE]'
   m_TagString: Untagged
@@ -979,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510178228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.7, y: 0, z: 0}
+  m_LocalPosition: {x: 108.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1000014396}
@@ -987,6 +1014,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510178230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510178228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83bb24bf67b542efab0a5cc63b104119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planeActionManagerRef:
+  - {fileID: 7474398332631058409}
+  - {fileID: 8296050093243885914}
 --- !u!1 &513846476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1043,7 @@ GameObject:
   - component: {fileID: 513846478}
   - component: {fileID: 513846477}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PanoramaObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,6 +1061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b166fbf48ebe74b9c449fdd237c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _planeActionManagerRef:
+  - {fileID: 7474398332631058409}
+  - {fileID: 8296050093243885914}
   for_loading: {fileID: 2800000, guid: 7ffd4db7d3cb14461bb996f6d73479f5, type: 3}
   UniversalMat: {fileID: 2100000, guid: 1e1c5ff3019194047b9f8f12a6b6cdd8, type: 2}
   Panorama: {fileID: 4800000, guid: cc493520de1dae846be9c4895e58d5f2, type: 3}
@@ -2090,7 +2135,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
@@ -2099,14 +2143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2194,7 +2230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionsInfoReference: {fileID: 1109002292}
   _propertyTag: 0
-  CubeChangingSkyBoxRef: {fileID: 513846477}
+  panoramaBehaviourRef: {fileID: 513846477}
 --- !u!1 &979389712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,7 +3059,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1211657575}
-  - component: {fileID: 1211657574}
   m_Layer: 8
   m_Name: PP_Volume
   m_TagString: Untagged
@@ -3031,18 +3066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1211657574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211657573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1211657575
 Transform:
   m_ObjectHideFlags: 0
@@ -3927,7 +3950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8b66e73e494ec48af487bd1eaf6bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeChangingSkyBoxReference: {fileID: 513846477}
+  panoramaBehaviourReference: {fileID: 513846477}
 --- !u!1 &1801080787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,10 +4823,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 11588695906602622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &57799642449611049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5024,10 +5046,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 270006226181853750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &279186634728356069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5203,10 +5224,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 395698204069118690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &403417017017237840
 Transform:
   m_ObjectHideFlags: 0
@@ -5601,10 +5621,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 847320428364170581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &895425351981278850
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5745,7 +5764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1096175084891401627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5753,12 +5772,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096175084891401626}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3589bc48b43af7489b7147d4f19ad23, type: 3}
+  m_Script: {fileID: 11500000, guid: 528fbb41941f49b6a3da30e0c654c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &1096175084891401628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10476,7 +10494,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f2bffbeb094e1415586c0fdcaa089b71, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10625,6 +10642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096175085626873608}
   - component: {fileID: 1096175085626873610}
+  - component: {fileID: 1096175085626873611}
   m_Layer: 8
   m_Name: Teleport
   m_TagString: Untagged
@@ -10645,6 +10663,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 1
+--- !u!114 &1096175085626873611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096175085626873609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb41cc59f5f4c72ab35ef64d895ca47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096175085739798992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10674,7 +10704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8b66e73e494ec48af487bd1eaf6bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeChangingSkyBoxReference: {fileID: 513846477}
+  panoramaBehaviourReference: {fileID: 513846477}
 --- !u!4 &1096175085739798999
 Transform:
   m_ObjectHideFlags: 0
@@ -10935,10 +10965,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394592463308477848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &1404852607075918925
 Transform:
   m_ObjectHideFlags: 0
@@ -10988,7 +11017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1404852607076087918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10998,10 +11027,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404852607076087917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3589bc48b43af7489b7147d4f19ad23, type: 3}
+  m_Script: {fileID: 11500000, guid: 528fbb41941f49b6a3da30e0c654c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &1404852607078344365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15727,7 +15755,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f2bffbeb094e1415586c0fdcaa089b71, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15853,10 +15880,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1598472546567751582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &1603712534635781536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15982,7 +16008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b03f70e1bf5bc438076c5a6be64f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
+  panoramaBehaviour: {fileID: 513846477}
 --- !u!4 &1689092695013668244
 Transform:
   m_ObjectHideFlags: 0
@@ -16079,10 +16105,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772926874493238688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &1795903613684187801
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16120,10 +16145,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1803404438954367269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &1851912371791765741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16192,10 +16216,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854716026725658096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &1883990212844197747
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16600,10 +16623,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2434189981310399420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &2500502358901721523
 Transform:
   m_ObjectHideFlags: 0
@@ -16710,10 +16732,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603118891078104650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &2669612766112841290
 Transform:
   m_ObjectHideFlags: 0
@@ -16780,10 +16801,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2695673158203938193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &2711479494260578969
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17258,10 +17278,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3450286164671418385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &3460708532418358295
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17437,10 +17456,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3735926914094923167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &3756893413693130064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17722,10 +17740,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4133288140388651201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &4146328370534636443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17822,10 +17839,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4264604070840886074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &4296777747326698642
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17929,10 +17945,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4382881240469909507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &4383002356641716726
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18010,10 +18025,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4498099793252580156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &4551426726110073440
 Transform:
   m_ObjectHideFlags: 0
@@ -18164,10 +18178,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4746600402072983993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &4795376199878649515
 GameObject:
   m_ObjectHideFlags: 0
@@ -18313,10 +18326,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4896933428116941757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &4902703801462100404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18385,10 +18397,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4908718790908287821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &4962733276591691719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18474,10 +18485,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5024321773859788618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &5044866632211665719
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18612,7 +18622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b03f70e1bf5bc438076c5a6be64f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
+  panoramaBehaviour: {fileID: 513846477}
 --- !u!33 &5171832458816975058
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18720,10 +18730,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5325096456001805026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &5329185929486269779
 GameObject:
   m_ObjectHideFlags: 0
@@ -18753,10 +18762,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5329185929486269779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &5352896615997029920
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18794,10 +18802,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5390874539948362581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &5393712107046536460
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18857,10 +18864,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5441144850004996729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &5460942867582715016
 Transform:
   m_ObjectHideFlags: 0
@@ -19245,10 +19251,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5780361016479333963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &5807335315307990979
 GameObject:
   m_ObjectHideFlags: 0
@@ -19278,10 +19283,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5807335315307990979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &5844158053115061580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19400,10 +19404,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5912640240088991751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &5936104791556787736
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19455,10 +19458,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5949921031945129686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &5968753803453181481
 Transform:
   m_ObjectHideFlags: 0
@@ -19671,10 +19673,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6064090195055677422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &6080892166957708835
 Transform:
   m_ObjectHideFlags: 0
@@ -20082,10 +20083,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6390160580241998730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &6390594774109042716
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20167,10 +20167,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6479794931741055166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &6511033738158012118
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20208,10 +20207,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6516810121664561350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &6535714904533498012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20544,10 +20542,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6851125935896922966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &6868121564897864872
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20926,10 +20923,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7177433203299671010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &7205089921031865701
 Transform:
   m_ObjectHideFlags: 0
@@ -20973,10 +20969,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7221304719212941425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &7230906835840798196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21045,10 +21040,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7265936597375549747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &7328080290923024980
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21117,10 +21111,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7360304161786293487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!23 &7366531720022154964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21275,10 +21268,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7445308457900862318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &7459524593430145636
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21308,6 +21300,7 @@ GameObject:
   - component: {fileID: 993734941775652751}
   - component: {fileID: 7474398332631058407}
   - component: {fileID: 7474398332631058408}
+  - component: {fileID: 7474398332631058409}
   m_Layer: 8
   m_Name: MainCube
   m_TagString: cube
@@ -21347,6 +21340,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 0
+--- !u!114 &7474398332631058409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474398332631058406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed78ac2f59942ae8201aeadde97c270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &7478277803059945354
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21442,10 +21447,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7570035956972161523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &7574679086299469518
 GameObject:
   m_ObjectHideFlags: 0
@@ -21475,10 +21479,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7574679086299469518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &7575943978113944832
 Transform:
   m_ObjectHideFlags: 0
@@ -21945,10 +21948,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8130590604186516272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!4 &8157767295179300020
 Transform:
   m_ObjectHideFlags: 0
@@ -22146,19 +22148,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296050091230224126}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8296050091230224116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296050091230224126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d0ab8d0bd85d641856a22495831fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &8296050091230224126
 GameObject:
   m_ObjectHideFlags: 0
@@ -22171,7 +22160,7 @@ GameObject:
   - component: {fileID: 8296050091230224115}
   - component: {fileID: 8296050091230224114}
   - component: {fileID: 8296050091230224113}
-  - component: {fileID: 8296050091230224116}
+  - component: {fileID: 8296050091230224128}
   m_Layer: 8
   m_Name: ChillPlane1
   m_TagString: Untagged
@@ -22193,6 +22182,18 @@ Transform:
   m_Father: {fileID: 8296050091237647217}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8296050091230224128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050091230224126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421befac08244d5aa7f5291e7e66146d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8296050091237647216
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22232,7 +22233,6 @@ GameObject:
   - component: {fileID: 8296050091237647216}
   - component: {fileID: 8296050091237647231}
   - component: {fileID: 8296050091237647230}
-  - component: {fileID: 8296050091237647229}
   m_Layer: 8
   m_Name: ChillPannel
   m_TagString: Untagged
@@ -22240,18 +22240,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8296050091237647229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296050091237647228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c20e7938cacb7f4fbe357ab7c19398c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &8296050091237647230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22317,7 +22305,7 @@ GameObject:
   - component: {fileID: 8296050092652251800}
   - component: {fileID: 8296050092652251783}
   - component: {fileID: 8296050092652251782}
-  - component: {fileID: 8296050092652251801}
+  - component: {fileID: 8296050092652251781}
   m_Layer: 8
   m_Name: ChillPlane3
   m_TagString: Untagged
@@ -22339,6 +22327,18 @@ Transform:
   m_Father: {fileID: 8296050091237647217}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &8296050092652251781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050092652251779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421befac08244d5aa7f5291e7e66146d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &8296050092652251782
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22400,19 +22400,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296050092652251779}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8296050092652251801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296050092652251779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d0ab8d0bd85d641856a22495831fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &8296050092685547077
 GameObject:
   m_ObjectHideFlags: 0
@@ -22519,7 +22506,7 @@ GameObject:
   - component: {fileID: 8296050092798392815}
   - component: {fileID: 8296050092798392814}
   - component: {fileID: 8296050092798392813}
-  - component: {fileID: 8296050092798392812}
+  - component: {fileID: 8296050092798392816}
   m_Layer: 8
   m_Name: ChillPlane4
   m_TagString: Untagged
@@ -22541,19 +22528,6 @@ Transform:
   m_Father: {fileID: 8296050091237647217}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &8296050092798392812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296050092798392810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d0ab8d0bd85d641856a22495831fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &8296050092798392813
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22615,6 +22589,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296050092798392810}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8296050092798392816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050092798392810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421befac08244d5aa7f5291e7e66146d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8296050092970058425
 GameObject:
   m_ObjectHideFlags: 0
@@ -22627,7 +22613,7 @@ GameObject:
   - component: {fileID: 8296050092970058430}
   - component: {fileID: 8296050092970058429}
   - component: {fileID: 8296050092970058428}
-  - component: {fileID: 8296050092970058431}
+  - component: {fileID: 8296050092970058427}
   m_Layer: 8
   m_Name: ChillPlane2
   m_TagString: Untagged
@@ -22649,6 +22635,18 @@ Transform:
   m_Father: {fileID: 8296050091237647217}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8296050092970058427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050092970058425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421befac08244d5aa7f5291e7e66146d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &8296050092970058428
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22710,19 +22708,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296050092970058425}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8296050092970058431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296050092970058425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d0ab8d0bd85d641856a22495831fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &8296050093243885910
 GameObject:
   m_ObjectHideFlags: 0
@@ -22733,9 +22718,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8296050093243885911}
   - component: {fileID: 6723432209604499972}
+  - component: {fileID: 8296050093243885913}
   - component: {fileID: 8296050093243885912}
+  - component: {fileID: 8296050093243885914}
   m_Layer: 8
-  m_Name: ChillOuts
+  m_Name: Pannel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22765,10 +22752,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 8296050093243885910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb6d9319f1f1455ba4dbde5c805178fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea4b46c3f944d3d8f500fd030ea28c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 1
+--- !u!114 &8296050093243885913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050093243885910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15846bcb9f54be3aeb737cb6db25981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityTag: 1
+--- !u!114 &8296050093243885914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296050093243885910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef372306b4b4113a66ea064b0211b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8296312820568763168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22851,10 +22863,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8407178216389346514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &8430433693411163300
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22898,10 +22909,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8439633713108539629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &8441993027841948694
 GameObject:
   m_ObjectHideFlags: 0
@@ -23385,10 +23395,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8972409552098419171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!33 &8993925831002614443
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23473,10 +23482,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9037235156951420631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!1 &9054667958412714383
 GameObject:
   m_ObjectHideFlags: 0
@@ -23506,10 +23514,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9054667958412714383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b5317a0b20654b83a30a10900d1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 724c134cc6044f9cb0de0ab215c62c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeChangingSkyBox: {fileID: 513846477}
 --- !u!64 &9082325289289851138
 MeshCollider:
   m_ObjectHideFlags: 0

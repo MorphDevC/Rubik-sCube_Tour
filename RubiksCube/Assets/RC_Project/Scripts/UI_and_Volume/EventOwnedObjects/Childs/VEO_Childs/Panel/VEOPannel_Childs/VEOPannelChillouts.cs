@@ -1,22 +1,18 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
-public class VEOSphere: VolumeEventOwnedObject
+public class VEOPannelChillouts:VEOPannel
 {
     private List<byte> _panoramaIdToInteraction = new List<byte>()
     {
-        3,7,13,15,21,26,34,41
+        9,30,37,47
     };
     public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
         if(!_panoramaIdToInteraction.Contains(targetPlane))
             return;
         base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
-        SetChildObjectsInScene(targetPlane);
-    }
-
-    protected override void SetChildObjectsInScene(byte targetPlane)
-    {
-        base.SetChildObjectsInScene(targetPlane);
+        if(!IsPanelSet)
+            InvokeEventOnPanelSet(_panoramaIdToInteraction);
     }
 }
+

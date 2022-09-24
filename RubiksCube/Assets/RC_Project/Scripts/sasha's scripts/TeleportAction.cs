@@ -6,7 +6,7 @@ public class TeleportAction : MonoBehaviour
 {
     
     private static byte _refPos;
-    public CubeChangingSkyBox cubeChangingSkyBox;
+    public PanoramaBehaviour panoramaBehaviour;
     private byte _destinationNumber;
     private byte _changeSky;
     private Renderer _enterMat;
@@ -59,13 +59,13 @@ public class TeleportAction : MonoBehaviour
         //        _destinationNumber = 25;
         //}
         #endregion
-        cubeChangingSkyBox.ShowDestinationPlane(_destinationNumber);
+        panoramaBehaviour.ShowDestinationPlane(_destinationNumber);
     }
 
     private void OnMouseExit()
     {
         _enterMat.material.DisableKeyword("_EMISSION");
-        cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
+        panoramaBehaviour.UI_ImageBackground.SetActive(false);
     }
     // 5  (0) - RefectoryLeft
     // 25 (1) - RefectoryRight
@@ -108,7 +108,7 @@ public class TeleportAction : MonoBehaviour
                 _changeSky = 17;
                 break;
         }
-        cubeChangingSkyBox.ChangeSkyBox(_changeSky);
+        panoramaBehaviour.ChangePanorama(_changeSky);
     }
 
     

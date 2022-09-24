@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class NavStairsSph : MonoBehaviour
 {
 
-    public CubeChangingSkyBox cubeChangingSkyBox;
+    [FormerlySerializedAs("cubeChangingSkyBox")] public PanoramaBehaviour panoramaBehaviour;
     //public GameObject NavUp;
     //public GameObject NavDown;
 
@@ -90,13 +91,13 @@ public class NavStairsSph : MonoBehaviour
                 showLoungeStairs = 41;
                 break;
         }
-        cubeChangingSkyBox.ShowDestinationPlane(showLoungeStairs);
+        panoramaBehaviour.ShowDestinationPlane(showLoungeStairs);
     }
 
 
     private void OnMouseExit()
     {
-        cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
+        panoramaBehaviour.UI_ImageBackground.SetActive(false);
     }
     private void OnMouseDown()
     {
@@ -183,6 +184,6 @@ public class NavStairsSph : MonoBehaviour
                 break;
 
         }
-        cubeChangingSkyBox.ChangeSkyBox(NumberChillPlane);
+        panoramaBehaviour.ChangePanorama(NumberChillPlane);
     }
 }

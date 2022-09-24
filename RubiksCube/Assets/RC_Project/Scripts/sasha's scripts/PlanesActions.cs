@@ -7,18 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class PlanesActions : MonoBehaviour
 {
+    //public CubeChangingSkyBox cubeChangingSkyBox;
+    //private static bool _doNotUseSomeStringsInCubeChangeSky=false;
+    //public byte NumberPlane {get => this.numberPlane; set => this.numberPlane = value;}
+    //public static bool DoNotUseSomeStringsInCubeChangeSky { get => _doNotUseSomeStringsInCubeChangeSky; set => _doNotUseSomeStringsInCubeChangeSky = value; }
+    public byte PlaneNumber { get; private set; }
+    public Renderer InteractionMaterial { get; private set; }
+    public event Action<byte> OnMouseInteractionShowDestination;
     
-
-    public CubeChangingSkyBox cubeChangingSkyBox;
-
-
-    private static bool _doNotUseSomeStringsInCubeChangeSky=false;
-
-    private byte numberPlane;
-
-    public byte NumberPlane {get => this.numberPlane; set => this.numberPlane = value;}
-    public static bool DoNotUseSomeStringsInCubeChangeSky { get => _doNotUseSomeStringsInCubeChangeSky; set => _doNotUseSomeStringsInCubeChangeSky = value; }
-    private Renderer _enterMat;
     private bool _mouseOnPlane = false;
     private void Awake()
     {
@@ -27,8 +23,7 @@ public class PlanesActions : MonoBehaviour
 
     private void Start()
     {
-       
-        _enterMat = GetComponent<Renderer>();
+        InteractionMaterial = GetComponent<Renderer>();
     }
 
    
@@ -36,28 +31,27 @@ public class PlanesActions : MonoBehaviour
     private void OnMouseEnter()
     {
         _mouseOnPlane = true;
-        _enterMat.material.EnableKeyword("_EMISSION");
-        NumberPlane = Convert.ToByte(gameObject.name.Substring(5));
-        cubeChangingSkyBox.ShowDestinationPlane(NumberPlane);
+        InteractionMaterial.material.EnableKeyword("_EMISSION");
+        PlaneNumber = Convert.ToByte(gameObject.name.Substring(5));
+        //cubeChangingSkyBox.ShowDestinationPlane(NumberPlane);
         // each plane is named "Plane№". Substring Deletes "Plane" and leaves only №.
     }
 
     private void OnMouseExit()
     {
         _mouseOnPlane = false;
-        _enterMat.material.DisableKeyword("_EMISSION");
-        cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
-        //cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
+        InteractionMaterial.material.DisableKeyword("_EMISSION");
+       // cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
     }
 
     private void OnMouseUp()
     {
         if (_mouseOnPlane)
         {
-            DoNotUseSomeStringsInCubeChangeSky = false;
-            _enterMat.material.DisableKeyword("_EMISSION");
-            NumberPlane = Convert.ToByte(gameObject.name.Substring(5)); //SubString(5) = Delete (P l a n e)
-            cubeChangingSkyBox.ChangeSkyBox(NumberPlane);
+            //DoNotUseSomeStringsInCubeChangeSky = false;
+            InteractionMaterial.material.DisableKeyword("_EMISSION");
+            PlaneNumber = Convert.ToByte(gameObject.name.Substring(5)); //SubString(5) = Delete (P l a n e)
+            //cubeChangingSkyBox.ChangeSkyBox(NumberPlane);
         }
     }
     
@@ -65,6 +59,7 @@ public class PlanesActions : MonoBehaviour
     private IEnumerator Delay(float time)
     {
         yield return new WaitForSeconds(time);
-        _enterMat.material.DisableKeyword("_EMISSION");
+        InteractionMaterial.material.DisableKeyword("_EMISSION");
     }
+    
 }

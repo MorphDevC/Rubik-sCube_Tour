@@ -8,7 +8,7 @@ public class NavigationPannel
     {
         if (inChillPannel)
         {
-            CubeChangingSkyBox.InChiillPannel = inChillPannel;
+            PanoramaBehaviour.InChiillPannel = inChillPannel;
             _pannel.SetActive(true);
             _pannel.transform.position = _position;
             _pannel.transform.localEulerAngles = _rotation;
@@ -16,7 +16,7 @@ public class NavigationPannel
         }
         else
         {
-            CubeChangingSkyBox.InChiillPannel = inChillPannel;// must be upper setActive(True) cuz there is script on GameObject with onEnable and this bool
+            PanoramaBehaviour.InChiillPannel = inChillPannel;// must be upper setActive(True) cuz there is script on GameObject with onEnable and this bool
             _pannel.SetActive(true);
             _pannel.transform.localPosition = _position;
             _pannel.transform.localEulerAngles = _rotation;

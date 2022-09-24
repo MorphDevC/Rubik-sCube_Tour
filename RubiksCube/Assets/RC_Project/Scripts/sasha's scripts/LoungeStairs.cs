@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LoungeStairs : MonoBehaviour
 {
   
 
-    public CubeChangingSkyBox cubeChangingSkyBox;
+    [FormerlySerializedAs("cubeChangingSkyBox")] public PanoramaBehaviour panoramaBehaviour;
     private byte numberChillPlane; // on which plane we reference in CubeChange...cs
     private static byte _hallOrStairs;
     // true - use nav Arrows for from 0-4 floors
@@ -88,13 +89,13 @@ public class LoungeStairs : MonoBehaviour
                     showLoungeStairs = 21;
                 break;
         }
-        cubeChangingSkyBox.ShowDestinationPlane(showLoungeStairs);
+        panoramaBehaviour.ShowDestinationPlane(showLoungeStairs);
     }
     
 
     private void OnMouseExit()
     {
-        cubeChangingSkyBox.UI_ImageBackground.SetActive(false);
+        panoramaBehaviour.UI_ImageBackground.SetActive(false);
     }
 
     private void OnMouseDown()
@@ -176,6 +177,6 @@ public class LoungeStairs : MonoBehaviour
                 HallOrStair = 6;
                 break;
         }
-        cubeChangingSkyBox.ChangeSkyBox(NumberChillPlane);
+        panoramaBehaviour.ChangePanorama(NumberChillPlane);
     }
 }

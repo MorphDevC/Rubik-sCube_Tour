@@ -2,7 +2,7 @@
 
 public class PanoramaCameraTwirling : ObjectTwirlingFloat
 {
-    public CubeChangingSkyBox CubeChangingSkyBoxRef;
+    public PanoramaBehaviour panoramaBehaviourRef;
     
     // [SerializeField] private OptionsInfo OptionsInfoReference;
     // [SerializeField] private PropertyTag _propertyTag;
@@ -13,9 +13,9 @@ public class PanoramaCameraTwirling : ObjectTwirlingFloat
 
     public override void Start()
     {
-        CubeChangingSkyBoxRef.OnPanoramaSetCamera += SetCameraCameraDefaultRotation;
-        CubeChangingSkyBoxRef.OnPanoramaSetCamera += SetCameraCameraRotationOnPanoramaSetCamera;
-        CubeChangingSkyBoxRef.OnPanoramaUnSetCamera += SetCameraCameraRotationOnPanoramaUnSetCamera;
+        panoramaBehaviourRef.OnPanoramaSetCamera += SetCameraCameraDefaultRotation;
+        panoramaBehaviourRef.OnPanoramaSetCamera += SetCameraCameraRotationOnPanoramaSetCamera;
+        panoramaBehaviourRef.OnPanoramaUnSetCamera += SetCameraCameraRotationOnPanoramaUnSetCamera;
         
         base.Start();
         

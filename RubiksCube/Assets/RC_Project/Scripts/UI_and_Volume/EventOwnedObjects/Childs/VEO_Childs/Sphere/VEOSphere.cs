@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-public class VEOPannel : VolumeEventOwnedObject
+public class VEOSphere: VolumeEventOwnedObject
 {
     private List<byte> _panoramaIdToInteraction = new List<byte>()
     {
-        4,9,22,29,30,39,47
-    }; // Add 37
+        3,7,13,15,21,26,34,41
+    };//add 37
     public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
         if(!_panoramaIdToInteraction.Contains(targetPlane))
