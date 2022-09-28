@@ -1029,6 +1029,7 @@ MonoBehaviour:
   _planeActionManagerRef:
   - {fileID: 7474398332631058409}
   - {fileID: 8296050093243885914}
+  - {fileID: 1096175085626873611}
 --- !u!1 &513846476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1065,7 @@ MonoBehaviour:
   _planeActionManagerRef:
   - {fileID: 7474398332631058409}
   - {fileID: 8296050093243885914}
+  - {fileID: 1096175085626873611}
   for_loading: {fileID: 2800000, guid: 7ffd4db7d3cb14461bb996f6d73479f5, type: 3}
   UniversalMat: {fileID: 2100000, guid: 1e1c5ff3019194047b9f8f12a6b6cdd8, type: 2}
   Panorama: {fileID: 4800000, guid: cc493520de1dae846be9c4895e58d5f2, type: 3}
@@ -10641,8 +10643,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1096175085626873608}
-  - component: {fileID: 1096175085626873610}
   - component: {fileID: 1096175085626873611}
+  - component: {fileID: 1096175085626873612}
+  - component: {fileID: 1096175085626873610}
   m_Layer: 8
   m_Name: Teleport
   m_TagString: Untagged
@@ -10659,7 +10662,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096175085626873609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc31c05465144793a01449caff5a9695, type: 3}
+  m_Script: {fileID: 11500000, guid: 535c5a6e9a21491c802e38f016623dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 1
@@ -10675,6 +10678,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb41cc59f5f4c72ab35ef64d895ca47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1096175085626873612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096175085626873609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0051233ffb8e47bbac1ca8f3f287aedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityTag: 1
 --- !u!1 &1096175085739798992
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,21 +29,10 @@ public class VolumeEventOwnedObject : EventOwnedObject
         {43, new VolumeObjectData (new List<Vector3>(){new Vector3(110, 0, -84)},new List<Vector3>(){new Vector3(-90, 0, 0)})},
         {47, new VolumeObjectData (new List<Vector3>(){new Vector3(-3,21,-144)},new List<Vector3>(){ new Vector3(-90, 0, -127)})},
     };
-    public override void Awake()
-    {
-        base.Awake();
-    }
+    protected List<byte> _panoramaIdToInteraction;
+    public event Action<List<byte>> OnSetObjectFromCube;
+    private bool _isObjectSet = false;
     
-    public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
-    {
-        base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
-    }
-
-    public override void SetActiveStatusOwnedObject(BelongableTag targetTag, bool isActive)
-    {
-        base.SetActiveStatusOwnedObject(targetTag, isActive);
-    }
-
     protected virtual void SetChildObjectsInScene(byte targetPlane)
     {
         for (int index = 0; index < VolumeObjectDataTransform[targetPlane].GetPositions.Count; index++)
@@ -55,6 +44,12 @@ public class VolumeEventOwnedObject : EventOwnedObject
         }
     }
     
+    protected void InvokeEventOnPanelSet(List<byte> targetPanoramasId)
+    {
+        OnSetObjectFromCube?.Invoke(targetPanoramasId);
+        IsObjectSet = true;
+    }
+    
     private void SetChildPosition(Transform targetChild, Vector3 position)
     {
         targetChild.localPosition = position;
@@ -64,4 +59,10 @@ public class VolumeEventOwnedObject : EventOwnedObject
         targetChild.localEulerAngles = rotation;
     }
     
+    
+    public bool IsObjectSet
+    {
+        get => _isObjectSet;
+        private set =>_isObjectSet = value;
+    }
 }

@@ -1,4 +1,8 @@
-﻿public class ManagerTeleportPlaneAction:ManagerPlaneAction
+﻿using UnityEngine;
+
+[RequireComponent(typeof(VEOTeleportRefectory))]
+[RequireComponent(typeof(VEOTeleportSocietyRoom))]
+public class ManagerTeleportPlaneAction:ManagerPlaneAction
 {
     
 }

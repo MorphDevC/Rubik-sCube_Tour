@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class VEOPannel : VolumeEventOwnedObject
 {
-    public event Action<List<byte>> OnSetPanelFromCube;
-    private bool _isPanelSet = false;
-
     public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
         base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
         SetPanelTransformInScene(targetPlane);
-    }
-
-    protected void InvokeEventOnPanelSet(List<byte> targetPanoramasId)
-    {
-        OnSetPanelFromCube?.Invoke(targetPanoramasId);
-        IsPanelSet = true;
+        if(!IsObjectSet)
+            InvokeEventOnPanelSet(_panoramaIdToInteraction);
     }
 
     private void SetPanelTransformInScene(byte targetPlane)
@@ -26,11 +19,5 @@ public class VEOPannel : VolumeEventOwnedObject
             transform.localPosition = VolumeObjectDataTransform[targetPlane].GetPositions[index];
             transform.localEulerAngles = VolumeObjectDataTransform[targetPlane].GetRotations[index];
         }
-    }
-
-    public bool IsPanelSet
-    {
-        get => _isPanelSet;
-        private set =>_isPanelSet = value;
     }
 }
