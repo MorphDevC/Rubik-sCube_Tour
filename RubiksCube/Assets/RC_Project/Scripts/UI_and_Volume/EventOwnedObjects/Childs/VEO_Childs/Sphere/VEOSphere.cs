@@ -18,7 +18,8 @@ public class VEOSphere: VolumeEventOwnedObject
             }},
 
             {7, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(101, 43, -88),new Vector3(138, 35, -69))
+                new VolumeObjectData(new Vector3(101, 43, -88),Vector3.zero,26),
+                new VolumeObjectData(new Vector3(138, 35, -69),Vector3.zero,15)
             }},
 
             {13, new List<VolumeObjectData> {
@@ -26,7 +27,7 @@ public class VEOSphere: VolumeEventOwnedObject
             }},
         
             {15, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(93, 39, -36))
+                new VolumeObjectData(new Vector3(93, 39, -36),Vector3.zero,7)
             }},
 
             {21, new List<VolumeObjectData> { 
@@ -35,29 +36,41 @@ public class VEOSphere: VolumeEventOwnedObject
             }},
 
             {26, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(86, 43, -76), new Vector3(101, 27, -81))
+                new VolumeObjectData(new Vector3(86, 43, -76), Vector3.zero,34),
+                new VolumeObjectData(new Vector3(101, 27, -81),Vector3.zero,7)
             }},
 
             {34, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(88, 44, -59.5f), new Vector3(108, 29, -41))
+                new VolumeObjectData(new Vector3(88, 44, -59.5f), Vector3.zero,41),
+                new VolumeObjectData(new Vector3(108, 29, -41),Vector3.zero,26)
+            }},
+            
+            {37, new List<VolumeObjectData> {
+                new VolumeObjectData(new Vector3(120, 35, -42), Vector3.zero,41)
             }},
         
             {41, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(136, 34, -63), new Vector3(93, 30, -51.8f))
+                new VolumeObjectData(new Vector3(136, 34, -63), Vector3.zero,37),
+                new VolumeObjectData(new Vector3(93, 30, -51.8f),Vector3.zero,34)
             }},
         };
     }
 
     public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
-        if(!_panoramaIdToInteraction.Contains(targetPlane))
+        if(!VolumeObjectDataTransform.ContainsKey(targetPlane))
+        {
+            if(gameObject.activeInHierarchy)
+                SetActiveStatusOwnedObject(targetTag, false);
             return;
+        }
         base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
-        SetChildObjectsInScene(targetPlane);
+        SetObjectsInScene(targetPlane);
+        InvokeEventOnPanelSet(VolumeObjectDataTransform[targetPlane].AggregateByField());
     }
 
-    protected override void SetChildObjectsInScene(byte targetPlane)
+    protected override void SetObjectsInScene(byte targetPlane)
     {
-        base.SetChildObjectsInScene(targetPlane);
+        base.SetObjectsInScene(targetPlane);
     }
 }

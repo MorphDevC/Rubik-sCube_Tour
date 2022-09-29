@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VEOPannel : VolumeEventOwnedObject
 {
+    protected List<byte> _panoramaIdToInteraction;
     public override void Awake()
     {
         base.Awake();

@@ -9,4 +9,9 @@ public static class ListExt
         kek.Remove(targetValue);
         return kek;
     }
+
+    public static List<byte> AggregateByField(this List<VolumeObjectData> targetList)
+    {
+       return targetList.Select(element => element.SelfPanoramaID).ToList();;
+    }
 }

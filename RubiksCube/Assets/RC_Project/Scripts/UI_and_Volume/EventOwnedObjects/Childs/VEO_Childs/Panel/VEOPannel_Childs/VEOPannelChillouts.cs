@@ -11,7 +11,11 @@ public class VEOPannelChillouts:VEOPannel
     public override void SetActiveOwnedObjectOnPanoramaSet(BelongableTag targetTag, bool isActive, byte targetPlane)
     {
         if(!_panoramaIdToInteraction.Contains(targetPlane))
+        {
+            if(gameObject.activeInHierarchy)
+                SetActiveStatusOwnedObject(targetTag, false);
             return;
+        }
         base.SetActiveOwnedObjectOnPanoramaSet(targetTag, isActive, targetPlane);
     }
 }

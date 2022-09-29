@@ -1,26 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
 public class VolumeEventOwnedObject : EventOwnedObject
 {
     protected Dictionary<byte, List<VolumeObjectData>> VolumeObjectDataTransform = new Dictionary<byte, List<VolumeObjectData>>();
-
-     protected List<byte> _panoramaIdToInteraction;
+    protected List<ISceneSetObject> _sceneSetObjects;
     public event Action<List<byte>> OnSetObjectFromCube;
     private bool _isObjectSet = false;
-    
-    
-    // TODO: refactor this func cuz can be mistakes in inherits
-    protected virtual void SetChildObjectsInScene(byte targetPlane)
+
+    public override void Awake()
     {
-        for (int index = 0; index < VolumeObjectDataTransform[targetPlane].Count; index++)
+        base.Awake();
+        _sceneSetObjects = GetComponentsInChildren<ISceneSetObject>().ToList();
+    }
+
+    protected virtual void SetObjectsInScene(byte targetPlane)
+    {
+        int index2 = 0;
+        foreach (var objectData in VolumeObjectDataTransform[targetPlane])
         {
-            GameObject child = transform.GetChild(index).gameObject;
-            child.SetActive(true);
-            SetChildPosition(child.transform, VolumeObjectDataTransform[targetPlane][index].GetPosition);
-            SetChildRotation(child.transform, VolumeObjectDataTransform[targetPlane][index].GetRotation);
+            _sceneSetObjects[index2].SetActiveObject(true);
+            _sceneSetObjects[index2].SetChildPosition(objectData.GetPosition);
+            _sceneSetObjects[index2].SetChildRotation(objectData.GetRotation);
+            index2++;
+        }
+
+        for (int i = index2; i < _sceneSetObjects.Count; i++)
+        {
+            _sceneSetObjects[i].SetActiveObject(false);
         }
     }
     
@@ -28,15 +38,6 @@ public class VolumeEventOwnedObject : EventOwnedObject
     {
         OnSetObjectFromCube?.Invoke(targetPanoramasId);
         IsObjectSet = true;
-    }
-    
-    private void SetChildPosition(Transform targetChild, Vector3 position)
-    {
-        targetChild.localPosition = position;
-    }
-    private void SetChildRotation(Transform targetChild, Vector3 rotation)
-    {
-        targetChild.localEulerAngles = rotation;
     }
     
     

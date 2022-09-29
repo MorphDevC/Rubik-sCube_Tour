@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(VEOTeleportRefectory))]
-[RequireComponent(typeof(VEOTeleportSocietyRoom))]
+[RequireComponent(typeof(VEOTeleport))]
 public class ManagerTeleportPlaneAction:ManagerPlaneAction
 {
     
