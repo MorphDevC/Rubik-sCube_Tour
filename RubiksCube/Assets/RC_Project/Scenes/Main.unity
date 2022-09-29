@@ -1072,18 +1072,6 @@ MonoBehaviour:
   UniversalMat: {fileID: 2100000, guid: 1e1c5ff3019194047b9f8f12a6b6cdd8, type: 2}
   Panorama: {fileID: 4800000, guid: cc493520de1dae846be9c4895e58d5f2, type: 3}
   m_Renderer: {fileID: 513846479}
-  DefaultShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 3}
-  NavUp: {fileID: 1675209041621863976}
-  NavDown: {fileID: 5146893072761679527}
-  PannelNavigation: {fileID: 8296050093243885910}
-  teleportRefectory:
-  - {fileID: 1404852607076087917}
-  - {fileID: 1096175084891401626}
-  MainSceneObjects: {fileID: 1774835910}
-  UI_MainCubeCanvas: {fileID: 510178228}
-  UI_BackToCube_Panoram: {fileID: 1172440024}
-  UI_ImageBackground: {fileID: 418052288}
-  UI_DestinitionText: {fileID: 979389714}
 --- !u!135 &513846478
 SphereCollider:
   m_ObjectHideFlags: 0
