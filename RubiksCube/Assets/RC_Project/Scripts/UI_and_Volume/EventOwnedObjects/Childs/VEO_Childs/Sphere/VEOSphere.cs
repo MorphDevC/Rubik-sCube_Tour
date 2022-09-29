@@ -14,7 +14,7 @@ public class VEOSphere: VolumeEventOwnedObject
         VolumeObjectDataTransform = new Dictionary<byte, List<VolumeObjectData>>()
         {
             {3, new List<VolumeObjectData>() {
-                new VolumeObjectData(new Vector3(137f, 36, -37))
+                new VolumeObjectData(new Vector3(137f, 36, -37),Vector3.zero,21)
             }},
 
             {7, new List<VolumeObjectData> {
@@ -23,7 +23,7 @@ public class VEOSphere: VolumeEventOwnedObject
             }},
 
             {13, new List<VolumeObjectData> {
-                new VolumeObjectData(new Vector3(135, 34, -87.5f),new Vector3(0, 0, 0))
+                new VolumeObjectData(new Vector3(135, 34, -87.5f),Vector3.zero,21)
             }},
         
             {15, new List<VolumeObjectData> {
@@ -31,8 +31,8 @@ public class VEOSphere: VolumeEventOwnedObject
             }},
 
             {21, new List<VolumeObjectData> { 
-                new VolumeObjectData(new Vector3(138, 36, -34), new Vector3(0, 0, 0)),
-                new VolumeObjectData(new Vector3(86, 36, -93), new Vector3(0, 0, 0))
+                new VolumeObjectData(new Vector3(138, 36, -34), new Vector3(0, 0, 0),3),
+                new VolumeObjectData(new Vector3(86, 36, -93), new Vector3(0, 0, 0),13)
             }},
 
             {26, new List<VolumeObjectData> {
@@ -69,8 +69,4 @@ public class VEOSphere: VolumeEventOwnedObject
         InvokeEventOnPanelSet(VolumeObjectDataTransform[targetPlane].AggregateByField());
     }
 
-    protected override void SetObjectsInScene(byte targetPlane)
-    {
-        base.SetObjectsInScene(targetPlane);
-    }
 }

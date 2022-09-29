@@ -1030,6 +1030,7 @@ MonoBehaviour:
   - {fileID: 7474398332631058409}
   - {fileID: 8296050093243885914}
   - {fileID: 1096175085626873611}
+  - {fileID: 1096175086538647752}
 --- !u!1 &513846476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1067,7 @@ MonoBehaviour:
   - {fileID: 7474398332631058409}
   - {fileID: 8296050093243885914}
   - {fileID: 1096175085626873611}
+  - {fileID: 1096175086538647752}
   for_loading: {fileID: 2800000, guid: 7ffd4db7d3cb14461bb996f6d73479f5, type: 3}
   UniversalMat: {fileID: 2100000, guid: 1e1c5ff3019194047b9f8f12a6b6cdd8, type: 2}
   Panorama: {fileID: 4800000, guid: cc493520de1dae846be9c4895e58d5f2, type: 3}
@@ -5760,13 +5762,14 @@ GameObject:
   - component: {fileID: 1096175084891401630}
   - component: {fileID: 1096175084891401624}
   - component: {fileID: 1096175084891401627}
+  - component: {fileID: 1096175084891401631}
   m_Layer: 8
   m_Name: RefecTelLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1096175084891401627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10539,6 +10542,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1096175084891401631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096175084891401626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6148765e0d4ea4ae5ecf0da1af0741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1096175085498203109
 Transform:
   m_ObjectHideFlags: 0
@@ -10644,7 +10659,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1096175085626873608}
   - component: {fileID: 1096175085626873611}
-  - component: {fileID: 1096175085626873612}
   - component: {fileID: 1096175085626873610}
   m_Layer: 8
   m_Name: Teleport
@@ -10662,7 +10676,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096175085626873609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535c5a6e9a21491c802e38f016623dab, type: 3}
+  m_Script: {fileID: 11500000, guid: bc31c05465144793a01449caff5a9695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 1
@@ -10678,19 +10692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb41cc59f5f4c72ab35ef64d895ca47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1096175085626873612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096175085626873609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0051233ffb8e47bbac1ca8f3f287aedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unityTag: 1
 --- !u!1 &1096175085739798992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10843,6 +10844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096175086538647748}
   - component: {fileID: 1096175086538647751}
+  - component: {fileID: 1096175086538647752}
   m_Layer: 0
   m_Name: NavStairsSph
   m_TagString: Untagged
@@ -10863,6 +10865,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unityTag: 1
+--- !u!114 &1096175086538647752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096175086538647750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf36440497f43db9d0bf05075bee81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1103855336100699810
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11027,13 +11041,14 @@ GameObject:
   - component: {fileID: 1404852607094298797}
   - component: {fileID: 1404852607076087891}
   - component: {fileID: 1404852607076087918}
+  - component: {fileID: 1404852607076087919}
   m_Layer: 8
   m_Name: RefecTelRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1404852607076087918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11044,6 +11059,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 528fbb41941f49b6a3da30e0c654c370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1404852607076087919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404852607076087917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6148765e0d4ea4ae5ecf0da1af0741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!23 &1404852607078344365
@@ -16005,13 +16032,14 @@ GameObject:
   - component: {fileID: 7788897314507420394}
   - component: {fileID: 4391819119834233000}
   - component: {fileID: 1675209041621863977}
+  - component: {fileID: 1675209041621863978}
   m_Layer: 0
   m_Name: NavUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1675209041621863977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16021,10 +16049,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675209041621863976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b03f70e1bf5bc438076c5a6be64f57, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe3bb8a6c9042f7af432cf7ab41b03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panoramaBehaviour: {fileID: 513846477}
+--- !u!114 &1675209041621863978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675209041621863976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6148765e0d4ea4ae5ecf0da1af0741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1689092695013668244
 Transform:
   m_ObjectHideFlags: 0
@@ -18619,13 +18658,14 @@ GameObject:
   - component: {fileID: 4342981399237710437}
   - component: {fileID: 7827263290135336999}
   - component: {fileID: 5146893072761679528}
+  - component: {fileID: 5146893072761679529}
   m_Layer: 0
   m_Name: NavDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5146893072761679528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18635,10 +18675,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5146893072761679527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b03f70e1bf5bc438076c5a6be64f57, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe3bb8a6c9042f7af432cf7ab41b03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panoramaBehaviour: {fileID: 513846477}
+--- !u!114 &5146893072761679529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146893072761679527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6148765e0d4ea4ae5ecf0da1af0741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &5171832458816975058
 MeshFilter:
   m_ObjectHideFlags: 0

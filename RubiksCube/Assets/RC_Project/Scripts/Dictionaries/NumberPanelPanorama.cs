@@ -30,7 +30,7 @@ public class NumberPanelPanorama
         { 24, "hall" },
         { 25, "refectoryright_3" },
         { 26, "loungestairs2" },
-        { 27, "256b" },
+        { 27, "256" },
         { 28, "gymnast" },
         { 29, "251a" },
         { 30, "chillout2" },

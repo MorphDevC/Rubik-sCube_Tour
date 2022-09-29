@@ -4,10 +4,12 @@ public class RubikTwirling : ObjectTwirlingFloat
 {
     private Vector2 rotateXY;
     private Quaternion origRot;
-    
 
+
+    private Vector3 _testRot;
     void Start()
     {
+        _testRot = transform.eulerAngles;
         origRot = transform.localRotation;
         base.Start();
     }
