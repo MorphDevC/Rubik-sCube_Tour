@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class VolumeObjectData
 {
-    public VolumeObjectData():this(new List<Vector3>()) {}
-    public VolumeObjectData(List<Vector3> positions):this(positions,new List<Vector3>()) {}
+    public VolumeObjectData():this(Vector3.zero) {}
+    public VolumeObjectData(Vector3 position):this(position,Vector3.zero) {}
 
-    public VolumeObjectData(List<Vector3> positions, List<Vector3> rotations)
+    public VolumeObjectData(Vector3 position, Vector3 rotation, byte selfPanoramaID = default)
     {
-        GetPositions = positions;
-        if(positions.Count>0 && rotations.Count==0)
-            positions.ForEach(element=>rotations.Add(Vector3.zero));
-        GetRotations = rotations;
+        GetPosition = position;
+        GetRotation = rotation;
+        SelfPanoramaID = selfPanoramaID;
     }
 
-    public List<Vector3> GetPositions { get; private set; }
+    public Vector3 GetPosition { get; private set; }
 
-    public List<Vector3> GetRotations { get; private set; }
+    public Vector3 GetRotation { get; private set; }
+    public byte SelfPanoramaID { get; private set; }
 }

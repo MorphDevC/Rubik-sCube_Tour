@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,7 +17,11 @@ public class NavStairsSph : MonoBehaviour
     // false - use nav Arrows for govermant floor (third)
 
     private byte showLoungeStairs;
-    
+
+    private void Start()
+    {
+        
+    }
 
 
     public byte NumberChillPlane { get => this.numberChillPlane; set => this.numberChillPlane = value; }
