@@ -5,4 +5,4 @@ ____
 
 ## Structure of repo
 
--[Navigation](docs/Navigation/README.md) 
+-[Navigation](docs/Navigation/) 
