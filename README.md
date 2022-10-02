@@ -5,4 +5,5 @@ ____
 
 ## Structure of repo
 
--[Navigation](docs/Navigation/) 
+- [Navigation](docs/Navigation/) 
+- [Base UML diagram class](/docs/UML/Class-diagram/)
