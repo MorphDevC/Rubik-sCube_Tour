@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EventOwnedObjectsManager">
+    <Position X="7.75" Y="9.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAgAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\EventOwnedObjectsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerPlaneAction">
+    <Position X="10" Y="5.75" Width="4.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAIBCAAAAAAAIAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\ManagerPlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerCubePlaneAction" Collapsed="true">
+    <Position X="7.75" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Cube\ManagerCubePlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerPanelPlaneAction" Collapsed="true">
+    <Position X="10" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Panel\ManagerPanelPlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerSpherePlaneAction" Collapsed="true">
+    <Position X="12.25" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Sphere\ManagerSpherePlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerTeleportPlaneAction" Collapsed="true">
+    <Position X="14.75" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Teleport\ManagerTeleportPlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PanoramaBehaviour">
+    <Position X="17.5" Y="5.5" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CABAADAAASAFABAAQAAAAIAIAgAAAAAQAACACQBAACA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\Panorama\PanoramaBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlaneAction">
+    <Position X="21.75" Y="8" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAABAAAAAUAAAAAAEACAAEQACAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\PlaneAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CubePlaneAction" Collapsed="true">
+    <Position X="19.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAABAAAAAEAAAAAAAAAAAAAACAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Cube\CubePlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PanelPlaneAction" Collapsed="true">
+    <Position X="21.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Panel\PanelPlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpherePlaneAction" Collapsed="true">
+    <Position X="23" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Sphere\SpherePlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeleportPlaneAction" Collapsed="true">
+    <Position X="24.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\Childs\Teleport\TeleportPlaneAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventOwnedObject" Collapsed="true">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAABAAAEAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\EventOwnedObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIEventOwnedObject" Collapsed="true">
+    <Position X="11.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\UIEventOwnedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VolumeEventOwnedObject">
+    <Position X="13.75" Y="11" Width="3" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAIAAAAAAAAAgAAgAAAACAAAAAAAAAAAYAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\VolumeEventOwnedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneSetObject" Collapsed="true">
+    <Position X="17" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAEAAAAAAAAABAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\Volume\SceneSetObjects\SceneSetObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VEOPannel" Collapsed="true">
+    <Position X="12.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\VEO_Childs\Panel\VEOPannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VEOSphere" Collapsed="true">
+    <Position X="14.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\VEO_Childs\Sphere\VEOSphere.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VEOTeleport" Collapsed="true">
+    <Position X="16.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\VEO_Childs\Teleport\VEOTeleport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
