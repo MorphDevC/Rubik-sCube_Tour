@@ -1,5 +1,6 @@
 # Rubik-sCube_Tour
 Virtual tour of the university RTU MIREA - IKBSP - 2020y
+[Press on the link to try it out](http://morph977.site/RC3/)
 
 ____
 
