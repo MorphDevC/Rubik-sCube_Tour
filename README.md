@@ -18,3 +18,6 @@ ___
 
 ![Alt text](/docs/Gifs/1_MainIntercation.gif)
 
+### Loading panoramas
+
+![Alt text](/docs/Gifs/2_Downloading.gif)
