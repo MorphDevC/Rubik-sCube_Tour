@@ -1,20 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="EventOwnedObjectsManager">
-    <Position X="7.75" Y="9.75" Width="3.25" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="6.5" Y="9.75" Width="4.5" />
     <TypeIdentifier>
       <HashCode>CAAgAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\EventOwnedObjectsManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ManagerPlaneAction">
-    <Position X="10" Y="5.75" Width="4.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="10" Y="5" Width="4.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAEAAAAAAIBCAAAAAAAIAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\RC_Project\Scripts\Volume\PlanesInteraction\ManagerPlaneAction.cs</FileName>
@@ -49,8 +43,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PanoramaBehaviour">
-    <Position X="17.5" Y="5.5" Width="3.75" />
+    <Position X="6.5" Y="12.25" Width="3.75" />
     <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
@@ -150,6 +145,13 @@
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\RC_Project\Scripts\UI_and_Volume\EventOwnedObjects\Childs\VEO_Childs\Teleport\VEOTeleport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestinationTextManager">
+    <Position X="6.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACIAACAAQAAAAAAAIAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RC_Project\Scripts\UI\DestinationText\DestinationTextManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
